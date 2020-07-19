@@ -1,15 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import PaginationPosts from "../components/paginationPosts"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -17,63 +14,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+      <div class="container w-full md:max-w-6xl mx-auto">
+        <article className="w-full px-4 md:px-6 text-xl py-16 leading-normal">
+          <header className="pb-8">
+            <p><span class="text-base md:text-sm text-teal-500 font-bold">&lt;</span><a href="/" class="text-base md:text-sm text-teal-500 font-bold no-underline hover:underline">Volver al inicio</a></p>
+            <h1 class="font-bold break-normal pt-6 pb-2 text-3xl md:text-4xl">{post.frontmatter.title}</h1>
+            <p class="text-sm md:text-base font-normal">{post.frontmatter.date}</p>
+          </header>
+          <section className="markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+        <PaginationPosts pageContext={pageContext} />
+      </div>
     </Layout>
   )
 }
