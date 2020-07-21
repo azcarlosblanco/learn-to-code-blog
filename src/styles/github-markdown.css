@@ -1,6 +1,14 @@
 /* Modified version of: https://github.com/sindresorhus/github-markdown-css */
 
 /* purgecss start ignore */
+ 
+.markdown-body a {
+  @apply text-cta font-bold;
+}
+
+.markdown-body a:hover {
+  @apply text-brand
+}
 
 .markdown-body .octicon {
     display: inline-block;

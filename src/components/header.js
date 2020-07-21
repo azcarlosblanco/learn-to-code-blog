@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Header = ({ theme , handleOnChageTheme}) => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     query {
       allFile(
         filter: {

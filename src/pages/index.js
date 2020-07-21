@@ -26,9 +26,9 @@ const IndexPage = ({ data, location }) => {
       </div>
 
       <div className="container mx-auto mt-16">
-        <p className="text-lg sm:text-xl">Programar se trata de usar nuestra creatividad e ingenio para resolver problemas y automatizar tareas con la ayuda de una computadora. Dicho de otra forma, la programación trata de entender, construir y modificar software, hoy presente en <a target="_blank" href="https://es.wikipedia.org/wiki/Anexo:Pa%C3%ADses_por_n%C3%BAmero_de_usuarios_de_Internet">millones de dispositivos.</a></p>
-        <p className="text-lg sm:text-xl">Aprender a programar es <a target="_blank" href="https://platzi.com/blog/programar-te-ayuda-a-pensar/">aprender a pensar</a>. Programar permite ejercitar otras capacidades que sirven para todos los ámbitos de tu vida, como mejorar el razonamiento lógico formal y potenciar la habilidad para la resolución de problemas.</p>
-        <p className="text-lg sm:text-xl">Aprender a programar te abrirá muchas puertas, puesto que la <a target="_blank" href="https://www.diariodenavarra.es/noticias/negocios/economia/2020/06/17/informatica-telecomunicaciones-los-sectores-que-mas-empleo-crean-693305-1033.html">demanda laboral</a> que se genera a raíz de este crecimiento tecnológico, cada vez es más alta, por lo tanto, como programador tendrás muchas propuestas de empleo.</p>
+        <p className="text-lg sm:text-xl">Programar se trata de usar nuestra creatividad e ingenio para resolver problemas y automatizar tareas con la ayuda de una computadora. Dicho de otra forma, la programación trata de entender, construir y modificar software, hoy presente en <a target="_blank" className="text-cta font-bold hover:text-brand" href="https://es.wikipedia.org/wiki/Anexo:Pa%C3%ADses_por_n%C3%BAmero_de_usuarios_de_Internet">millones de dispositivos.</a></p>
+        <p className="text-lg sm:text-xl">Aprender a programar es <a target="_blank" className="text-cta font-bold hover:text-brand" href="https://platzi.com/blog/programar-te-ayuda-a-pensar/">aprender a pensar</a>. Programar permite ejercitar otras capacidades que sirven para todos los ámbitos de tu vida, como mejorar el razonamiento lógico formal y potenciar la habilidad para la resolución de problemas.</p>
+        <p className="text-lg sm:text-xl">Aprender a programar te abrirá muchas puertas, puesto que la <a target="_blank" className="text-cta font-bold hover:text-brand" href="https://www.diariodenavarra.es/noticias/negocios/economia/2020/06/17/informatica-telecomunicaciones-los-sectores-que-mas-empleo-crean-693305-1033.html">demanda laboral</a> que se genera a raíz de este crecimiento tecnológico, cada vez es más alta, por lo tanto, como programador tendrás muchas propuestas de empleo.</p>
       </div>
 
       <div className="container mx-auto overflow-x-hidden lg:overflow-x-hidden xl:overflow-x-visible border-gray-400 border-t mt-16 pt-16">
@@ -90,21 +90,6 @@ export const pageQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 620) {
           ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
         }
       }
     }
