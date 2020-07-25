@@ -4,8 +4,8 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 
 const SideBar = ({ currentPost }) => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    query { 
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(php)/"  }}, sort: { fields: [frontmatter___date], order: ASC }) {
         edges {
           node {
             excerpt
