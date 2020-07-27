@@ -66,7 +66,7 @@ const IndexPage = ({ data, location }) => {
             </li>
             <li className="checkmark">
               <div>MySQL</div>
-              <div className="text-lg text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab nam animi iure nemo exercitationem a, eius non culpa itaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ab nam animi iure nemo exercitationem a, eius non culpa itaque!</div>
+              <div className="text-lg text-gray-600">Es una de las base de datos más importantes actualmente en el mercado. Podemos definir a MySQL, como un gestor de base de datos relacional, multiusario y multihilo.</div>
             </li>
           </ul>
         </div>
