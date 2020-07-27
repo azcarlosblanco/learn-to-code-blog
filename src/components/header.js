@@ -50,10 +50,7 @@ const Header = ({ theme , handleOnChageTheme}) => {
             <ThemeSwitcher theme={theme} handleOnChageTheme={handleOnChageTheme} />
           </li>
           <li>
-            <Link to="/#projects" className="text-copy-primary hover:text-gray-600">Comenzar</Link>
-          </li>
-          <li>
-            <Link to="/#about" className="text-copy-primary hover:text-gray-600">PHP</Link>
+            <Link to="/php/01-fundamentos/" className="text-copy-primary hover:text-gray-600">Comenzar</Link>
           </li>
         </ul>
       </nav>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,9 +15,9 @@ const IndexPage = ({ data, location }) => {
           <div className="leading-tight">Aprende a programar</div>
           <div className="text-brand leading-tight">Con el poder de PHP construye la web hoy.</div>
           <div className="pt-0">
-            <button className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-transparent hover:bg-brand text-2xl font-semibold text-brand hover:text-white py-2 px-4 border border-brand hover:border-transparent rounded-full shadow-md hover:shadow-xl">
+            <Link to="/php/01-fundamentos/" className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-transparent hover:bg-brand text-2xl font-semibold text-brand hover:text-white py-2 px-4 border border-brand hover:border-transparent rounded-full shadow-md hover:shadow-xl">
               Comenzar
-            </button>
+            </Link>
           </div>
         </div>
         <div className="mt-8 sm:mt-0 w-full sm:w-3/5">
